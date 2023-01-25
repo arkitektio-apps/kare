@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  segmentor:
+    runtime: nvidia
+    ports:
+      - 8787:8787
+    build: .
+    
+
+
+networks:
+  default:
+    external:
+      name: dev
