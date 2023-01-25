@@ -2,6 +2,5 @@ author: john doe
 entrypoint: app
 identifier: kare
 scopes:
-- read
-- write
+  - read
 version: dev
