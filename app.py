@@ -1,4 +1,4 @@
-from arkitekt import easy
+from arkitekt import register
 from mikro.api.schema import (
     from_xarray,
     ExperimentFragment,
@@ -31,10 +31,17 @@ from csbdeep.io import load_training_data
 from csbdeep.models import Config, CARE
 from arkitekt.tqdm import tqdm
 
-app = easy("kare", url="http://herre:8000/f/")
+@register()
+def gpu_is_available() -> str:
+    """Check GPU
 
+    Check if the gpu is available
 
-@app.rekuest.register()
+    """
+    from tensorflow.python.client import device_lib
+    return str(device_lib.list_local_devices())
+
+@register()
 def train_care_model(
     context: ContextFragment,
     epochs: int = 10,
@@ -100,7 +107,7 @@ def train_care_model(
     return model
 
 
-@app.rekuest.register()
+@register()
 def predict(
     model: ModelFragment, representation: RepresentationFragment
 ) -> RepresentationFragment:
@@ -137,5 +144,3 @@ def predict(
     return generated
 
 
-with app:
-    app.rekuest.run()

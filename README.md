@@ -5,12 +5,6 @@
 
 kare is just CARE enabled as an arkitekt app
 
-### Inspiration
-
-Mikro is the client app for the mikro-server, a graphql compliant server for hosting your microscopy data. Mikro tries to
-facilitate a transition to use modern technologies for the storage and retrieval of microscopy data. It emphasizes the importance
-of relations within your data and tries to make them accessible through a GraphQL Interface.
-
 ### Installation
 
 In order to run kare you can either use the port automatic installer (which installs kare as a docker container with managed dependencies

@@ -1,0 +1,21 @@
+deployments:
+- definitions: []
+  deployed:
+    docker: jhnnsrs/kare:0.0.1
+  deployer: arkitekt.deployers.port.dockerbuild
+  identifier: kare
+  scopes:
+  - read
+  - write
+  version: 0.0.1
+- definitions: []
+  deployed:
+    docker: jhnnsrs/kare:0.0.2
+    runtime: nvidia
+  deployer: arkitekt.deployers.port.dockerbuild
+  identifier: kare
+  scopes:
+  - read
+  - write
+  version: 0.0.2
+latest_deployment: '2023-01-25T17:56:53.956309'

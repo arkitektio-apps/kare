@@ -1,0 +1,7 @@
+author: john doe
+entrypoint: app
+identifier: kare
+scopes:
+- read
+- write
+version: dev
