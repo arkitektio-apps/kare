@@ -27,4 +27,13 @@ deployments:
   scopes:
   - read
   version: 0.0.4
-latest_deployment: '2023-01-25T18:07:57.789364'
+- definitions: []
+  deployed:
+    docker: jhnnsrs/kare:0.0.8
+    runtime: standard
+  deployer: arkitekt.deployers.port.dockerbuild
+  identifier: kare
+  scopes:
+  - read
+  version: 0.0.8
+latest_deployment: '2023-01-26T10:57:01.345120'
