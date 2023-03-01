@@ -8,7 +8,6 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.8"
 csbdeep = "^0.7.2"
-arkitekt = "0.4.16"
 
 
 [build-system]

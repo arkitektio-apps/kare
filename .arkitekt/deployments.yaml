@@ -1,39 +1,11 @@
 deployments:
-- definitions: []
+- builder: arkitekt.builder.port
+  definitions: []
   deployed:
-    docker: jhnnsrs/kare:0.0.2
-    runtime: nvidia
-  deployer: arkitekt.deployers.port.dockerbuild
-  identifier: kare
-  scopes:
-  - read
-  - write
-  version: 0.0.2
-- definitions: []
-  deployed:
-    docker: jhnnsrs/kare:0.0.3
-    runtime: nvidia
-  deployer: arkitekt.deployers.port.dockerbuild
-  identifier: kare
-  scopes:
-  - read
-  version: 0.0.3
-- definitions: []
-  deployed:
-    docker: jhnnsrs/kare:0.0.4
-    runtime: nvidia
-  deployer: arkitekt.deployers.port.dockerbuild
-  identifier: kare
-  scopes:
-  - read
-  version: 0.0.4
-- definitions: []
-  deployed:
-    docker: jhnnsrs/kare:0.0.8
+    docker: jhnnsrs/kare:6
     runtime: standard
   deployer: arkitekt.deployers.port.dockerbuild
   identifier: kare
   scopes:
   - read
-  version: 0.0.8
-latest_deployment: '2023-01-26T10:57:01.345120'
+  version: '6'

@@ -68,8 +68,8 @@ def train_care_model(
         context=context,
     )
 
-    X = [t.x.data.sel(t=0, c=0).compute() for t in x]
-    Y = [t.y.data.sel(t=0, c=0).compute() for t in x]
+    X = [t.left.data.sel(t=0, c=0).compute() for t in x]
+    Y = [t.right.data.sel(t=0, c=0).compute() for t in x]
 
     raw_data = RawData.from_arrays(X, Y, axes="ZYX")
     print(raw_data)
@@ -102,6 +102,7 @@ def train_care_model(
         name=f"Care Model of {context.name}",
         contexts=[context],
     )
+
 
     shutil.rmtree(f"data")
     return model
@@ -141,6 +142,30 @@ def predict(
         )
 
     shutil.rmtree(f".modelcache/{random_dir}")
+    return generated
+
+
+
+@register()
+def transfer(
+    model: ModelFragment, context: ContextFragment
+) -> ModelFragment:
+    """Transfer Care
+
+    Use a care model and retrain it on a new context
+
+    Args:
+        model (ImageToImageModelFragment): The model
+        context (List[ContextFragment]): The new context
+
+    Returns:
+        model (ModelFragment): The new model
+    """
+
+    random_dir = str(uuid.uuid4())
+    generated = []
+
+    raise NotImplementedError("Not implemented yet")
     return generated
 
 
