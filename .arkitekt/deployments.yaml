@@ -1,22 +1,13 @@
 deployments:
-- builder: arkitekt.builder.port
+- author: jhnnsrs
+  command: arkitekt run port
+  created_at: '2023-04-12T17:47:27.624024'
   definitions: []
-  deployed:
-    docker: jhnnsrs/kare:6
-    runtime: standard
-  deployer: arkitekt.deployers.port.dockerbuild
+  entrypoint: app
   identifier: kare
+  image: jhnnsrs/kare:dev
+  requirements:
+  - gpu
   scopes:
   - read
-  version: '6'
-- builder: arkitekt.builder.port
-  definitions: []
-  deployed:
-    docker: jhnnsrs/kare:7
-    runtime: standard
-  deployer: arkitekt.deployers.port.dockerbuild
-  identifier: kare
-  scopes:
-  - read
-  version: '7'
-latest_deployment: '2023-03-02T16:02:00.479280'
+  version: dev

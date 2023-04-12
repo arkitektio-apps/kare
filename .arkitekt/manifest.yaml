@@ -1,6 +1,8 @@
-author: john doe
+author: jhnnsrs
 entrypoint: app
 identifier: kare
+requirements:
+- gpu
 scopes:
-  - read
+- read
 version: dev

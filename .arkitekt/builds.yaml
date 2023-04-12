@@ -1,0 +1,24 @@
+builds:
+- build_id: d149d66d-c689-4265-8bb9-a5c85687ebe7
+  builder: port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements:
+    - gpu
+    scopes:
+    - read
+    version: dev
+latest_build:
+  build_id: d149d66d-c689-4265-8bb9-a5c85687ebe7
+  builder: port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements:
+    - gpu
+    scopes:
+    - read
+    version: dev
