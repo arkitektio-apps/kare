@@ -79,14 +79,26 @@ builds:
     scopes:
     - read
     version: 0.0.1
-latest_build:
-  build_id: 0c3d9902-ec2b-4e06-96ac-bf9c097c5a35
+- build_id: eaafa991-d424-4b9b-b06a-7ae2d48a3eb1
   builder: arkitekt.builders.port
   manifest:
     author: jhnnsrs
     entrypoint: app
     identifier: kare
-    requirements: []
+    requirements:
+    - gpu
     scopes:
     - read
-    version: 0.0.1
+    version: 0.0.2
+latest_build:
+  build_id: eaafa991-d424-4b9b-b06a-7ae2d48a3eb1
+  builder: arkitekt.builders.port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements:
+    - gpu
+    scopes:
+    - read
+    version: 0.0.2
