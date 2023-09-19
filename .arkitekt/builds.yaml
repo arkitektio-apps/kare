@@ -1,24 +1,92 @@
 builds:
-- build_id: d149d66d-c689-4265-8bb9-a5c85687ebe7
-  builder: port
+- build_id: c467acc5-413e-4cf9-9e85-b3e1ad7c32ac
+  builder: arkitekt.builders.port
   manifest:
     author: jhnnsrs
     entrypoint: app
     identifier: kare
-    requirements:
-    - gpu
+    requirements: []
     scopes:
     - read
-    version: dev
+    version: 0.0.1
+- build_id: b8f84f53-aac6-469f-8fcc-4732619d3807
+  builder: arkitekt.builders.port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+- build_id: 510d0ffd-f3bf-4a45-a4ca-55302864d930
+  builder: arkitekt.builders.port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+- build_id: aea9f9e5-ba54-47be-a202-5d9d9a49b2f2
+  builder: arkitekt.builders.port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+- build_id: ce145151-bc47-4bf3-b30f-08dfcfa39667
+  builder: arkitekt.builders.port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+- build_id: 0ce92dcd-2d31-44ed-8c85-d972c0d5030b
+  builder: arkitekt.builders.port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+- build_id: dc8b87a8-9029-42b0-b0d8-43c1d84405b0
+  builder: arkitekt.builders.port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+- build_id: 0c3d9902-ec2b-4e06-96ac-bf9c097c5a35
+  builder: arkitekt.builders.port
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: kare
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
 latest_build:
-  build_id: d149d66d-c689-4265-8bb9-a5c85687ebe7
-  builder: port
+  build_id: 0c3d9902-ec2b-4e06-96ac-bf9c097c5a35
+  builder: arkitekt.builders.port
   manifest:
     author: jhnnsrs
     entrypoint: app
     identifier: kare
-    requirements:
-    - gpu
+    requirements: []
     scopes:
     - read
-    version: dev
+    version: 0.0.1

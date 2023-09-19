@@ -1,13 +1,17 @@
 deployments:
-- author: jhnnsrs
-  command: arkitekt run port
-  created_at: '2023-04-12T17:47:27.624024'
+- build_id: 0c3d9902-ec2b-4e06-96ac-bf9c097c5a35
+  builder: arkitekt.builders.port
   definitions: []
-  entrypoint: app
-  identifier: kare
-  image: jhnnsrs/kare:dev
-  requirements:
-  - gpu
-  scopes:
-  - read
-  version: dev
+  deployed_at: '2023-09-19T12:02:41.861460'
+  deployment_id: f7b05d25-e5b7-4a6f-84dc-4f1571f81f66
+  image: jhnnsrs/kare:0.0.1
+  manifest:
+    author: jhnnsrs
+    created_at: '2023-09-19T12:00:01.863371'
+    entrypoint: app
+    identifier: kare
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+latest_deployment: '2023-09-19T12:02:41.861487'

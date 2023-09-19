@@ -146,26 +146,4 @@ def predict(
 
 
 
-@register()
-def transfer(
-    model: ModelFragment, context: ContextFragment
-) -> ModelFragment:
-    """Transfer Care
-
-    Use a care model and retrain it on a new context
-
-    Args:
-        model (ImageToImageModelFragment): The model
-        context (List[ContextFragment]): The new context
-
-    Returns:
-        model (ModelFragment): The new model
-    """
-
-    random_dir = str(uuid.uuid4())
-    generated = []
-
-    raise NotImplementedError("Not implemented yet")
-    return generated
-
 
