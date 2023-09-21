@@ -46,6 +46,7 @@ def train_care_model(
     context: ContextFragment,
     epochs: int = 10,
     patches_per_image: int = 1024,
+    trainsteps_per_epoch: int = 10,
     validation_split: float = 0.1,
 ) -> ModelFragment:
     """Train Care Model
@@ -54,6 +55,11 @@ def train_care_model(
 
     Args:
         context (ContextFragment): The context
+        epochs (int, optional): Number of epochs. Defaults to 10.
+        patches_per_image (int, optional): Number of patches per image. Defaults to 1024.
+        trainsteps_per_epoch (int, optional): Number of trainsteps per epoch. Defaults to 10.
+        validation_split (float, optional): Validation split. Defaults to 0.1.
+
 
     Returns:
         ModelFragment: The Model
@@ -86,7 +92,7 @@ def train_care_model(
         validation_split=validation_split,
         verbose=True,
     )
-    config = Config(axes)
+    config = Config(axes, train_steps_per_epoch=trainsteps_per_epoch)
 
     model = CARE(config, training_data_id, basedir=".trainedmodels")
 
