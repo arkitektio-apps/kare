@@ -116,7 +116,7 @@ def train_care_model(
 
 @register()
 def predict(
-    model: ModelFragment, representation: RepresentationFragment
+    representation: RepresentationFragment, model: ModelFragment
 ) -> RepresentationFragment:
     """Predict Care
 
@@ -134,14 +134,42 @@ def predict(
     generated = []
 
     with model.data as f:
+
+        print()
         shutil.unpack_archive(f, f".modelcache/{random_dir}")
+
+        image_data = representation.data.sel(c=0, t=0).data.compute()
+        print(image_data.dtype)
+        print(image_data.max())
+        print(image_data.min())
 
         care_model = CARE(config=None, name=random_dir, basedir=".modelcache")
         restored = care_model.predict(
-            representation.data.sel(c=0, t=0).data.compute(), "ZXY"
+            image_data, "ZXY"
         )
+
+        print(restored.dtype)
+        print(restored.max())
+        print(restored.min())
+
+        t = restored.dtype
+        if   'float' in t.name:
+            t_new = np.float32
+        elif 'uint'  in t.name: 
+            t_new = np.uint16 if t.itemsize >= 2 else np.uint8
+        elif 'int'   in t.name:
+            t_new = np.int16
+        else:                  
+            t_new = t
+       
+        img = restored.astype(t_new, copy=False)
+
+        print(img.dtype)
+        print(img.max())
+        print(img.min())
+
         generated = from_xarray(
-            restored,
+            img,
             name=f"Care denoised of {representation.name}",
             tags=["denoised"],
             origins=[representation],

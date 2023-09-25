@@ -46,4 +46,20 @@ deployments:
     scopes:
     - read
     version: 0.0.3
-latest_deployment: '2023-09-21T15:31:48.515142'
+- build_id: ca036e4c-852a-42d9-9246-864118418ce8
+  builder: arkitekt.builders.port
+  definitions: []
+  deployed_at: '2023-09-25T15:42:58.966406'
+  deployment_id: 49bfe402-641d-4e41-9f25-1af07cd8d5f4
+  image: jhnnsrs/kare:0.0.4
+  manifest:
+    author: jhnnsrs
+    created_at: '2023-09-25T15:42:48.442117'
+    entrypoint: app
+    identifier: kare
+    requirements:
+    - gpu
+    scopes:
+    - read
+    version: 0.0.4
+latest_deployment: '2023-09-25T15:42:58.971489'
