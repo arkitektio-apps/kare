@@ -41,12 +41,15 @@ def gpu_is_available() -> str:
     from tensorflow.python.client import device_lib
     return str(device_lib.list_local_devices())
 
+
+
+
 @register()
 def train_care_model(
     context: ContextFragment,
-    epochs: int = 10,
+    epochs: int = 100,
     patches_per_image: int = 1024,
-    trainsteps_per_epoch: int = 10,
+    trainsteps_per_epoch: int = 400,
     validation_split: float = 0.1,
 ) -> ModelFragment:
     """Train Care Model
@@ -96,6 +99,7 @@ def train_care_model(
 
     model = CARE(config, training_data_id, basedir=".trainedmodels")
 
+
     for i in tqdm(range(epochs)):
         model.train(X, Y, validation_data=(X_val, Y_val), epochs=1)
 
@@ -135,22 +139,13 @@ def predict(
 
     with model.data as f:
 
-        print()
         shutil.unpack_archive(f, f".modelcache/{random_dir}")
 
         image_data = representation.data.sel(c=0, t=0).data.compute()
-        print(image_data.dtype)
-        print(image_data.max())
-        print(image_data.min())
-
         care_model = CARE(config=None, name=random_dir, basedir=".modelcache")
         restored = care_model.predict(
             image_data, "ZXY"
         )
-
-        print(restored.dtype)
-        print(restored.max())
-        print(restored.min())
 
         t = restored.dtype
         if   'float' in t.name:
@@ -163,10 +158,6 @@ def predict(
             t_new = t
        
         img = restored.astype(t_new, copy=False)
-
-        print(img.dtype)
-        print(img.max())
-        print(img.min())
 
         generated = from_xarray(
             img,
