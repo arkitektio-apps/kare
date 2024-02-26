@@ -26,6 +26,6 @@ by navigating to the "Port" tab and adding this repository in the "Add Repositor
 This plugin exposes two main Nodes, the "Train Care Model
 " Node and the "Predict Care" Node. You can use these nodes to train and infer CARE models respectively.
 
-In order to understand how to train and infer CARE models, you can check out the advanced tutorial [here](https://arkitekt.live/docs/introduction/advanced_tutorial/training)
+In order to understand how to train and infer CARE models, you can check out the advanced tutorial [here](https://arkitekt.live/docs/introduction/advanced/training)
 
 
